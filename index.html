@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con GIF aleatorio</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            display: none; /* Ocultar la imagen inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Array con las URLs de los GIF
+        var gifs = [
+            "CROMO 1.gif",
+            "CROMO 2.gif",
+            "CROMO 3.gif",
+            // Añade más URLs de GIFs si lo deseas
+        ];
+
+        // Función para obtener un número aleatorio entre 0 y gifs.length - 1
+        function getRandomIndex() {
+            return Math.floor(Math.random() * gifs.length);
+        }
+
+        // Mostrar un GIF aleatorio
+        var randomIndex = getRandomIndex();
+        var randomGifUrl = gifs[randomIndex];
+        var img = document.createElement("img");
+        img.src = randomGifUrl;
+        img.alt = "GIF aleatorio";
+        img.style.display = "block"; // Mostrar la imagen
+        document.body.appendChild(img);
+    </script>
+</body>
+</html>
